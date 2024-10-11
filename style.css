@@ -10,22 +10,25 @@ body {
     background-color: #121212; /* Dark background */
     color: #E0E0E0; /* Light text color */
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+    opacity: 0; /* Prevent initial shadowing */
+    transition: opacity 0.5s; /* Smooth transition for visibility */
+}
+
+/* Display body when loaded */
+body.loaded {
+    opacity: 1; 
 }
 
 a {
     text-decoration: none;
-    color: #E0E0E0;
+    color: #E0E0E0; /* Light link color */
 }
 
 /* Header and Navigation */
 header {
-    background-color: #1E1E1E;
+    background-color: #1E1E1E; /* Dark header background */
     padding: 20px 40px;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 100;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
 }
 
 nav {
@@ -38,7 +41,7 @@ nav h1 a {
     font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 2px;
-    color: #FFB300;
+    color: #FFB300; /* Gold accent color for elegance */
 }
 
 nav ul {
@@ -48,7 +51,7 @@ nav ul {
 }
 
 nav ul li a:hover {
-    color: #FFB300;
+    color: #FFB300; /* Gold hover effect */
 }
 
 /* Intro Section */
@@ -57,23 +60,9 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('images/your-art.jpg') no-repeat center center/cover;
-    color: #fff;
+    background: url('images/your-art.jpg') no-repeat center center/cover; /* Ensure this image is dark-themed or adjust opacity */
+    color: #fff; /* White text for contrast */
     text-align: center;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-
-#intro::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
 }
 
 .intro-text h2 {
@@ -88,63 +77,58 @@ nav ul li a:hover {
 
 .btn {
     padding: 10px 30px;
-    background-color: #FFB300;
-    color: #121212;
+    background-color: #FFB300; /* Gold button */
+    color: #121212; /* Dark text for button */
     border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform for hover effect */
 }
 
 .btn:hover {
-    background-color: #FFD600;
-    transform: translateY(-3px);
+    background-color: #FFD600; /* Lighter gold on hover */
 }
 
 /* Gallery Section */
 #gallery {
     padding: 50px;
-    background-color: #1E1E1E;
+    background-color: #1E1E1E; /* Dark gallery background */
 }
 
 #gallery h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 2rem;
-    color: #FFB300;
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
     gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .gallery-grid img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle shadow for images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition for hover effect */
 }
 
 .gallery-grid img:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Lightbox */
 .lightbox {
     display: none; /* Hidden by default */
     position: fixed;
-    z-index: 1000;
+    z-index: 1000; /* On top */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black with transparency */
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .lightbox-content {
@@ -152,37 +136,35 @@ nav ul li a:hover {
     max-height: 80%;
 }
 
-.close {
-    display: none; /* We don't need the close button anymore */
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 /* About Section */
 #about {
     padding: 50px;
-    background-color: #121212;
+    background-color: #121212; /* Dark about section background */
 }
 
 #about h2 {
     text-align: center;
-    font-size: 2rem;
-    color: #FFB300;
 }
 
 #about p {
     text-align: center;
     max-width: 600px;
-    margin: 20px auto;
-    color: #E0E0E0;
+    margin: 20px auto; /* Added margin for spacing */
 }
 
 /* Footer */
 footer {
-    background-color: #1E1E1E;
-    color: #fff;
+    background-color: #1E1E1E; /* Dark footer background */
+    color: #fff; 
     text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
+    padding: 20px 0; 
 }
