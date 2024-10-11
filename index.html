@@ -7,6 +7,8 @@
     <title>Escap3</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <!-- Add FontAwesome for icons if needed -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -17,11 +19,13 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Dark mode toggle button -->
+            <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
         </nav>
     </header>
 
     <section id="intro">
-        <div class="intro-text">
+        <div class="intro-text parallax">
             <h2>Escape From Reality</h2>
             <p>While You Can</p>
             <a href="#gallery" class="btn">Explore Gallery</a>
@@ -31,20 +35,20 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-            <img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You">
-            <img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok">
-            <img src="images/img-t1bHsXBw5FL9PZ70sXfbp.png" alt="Dress CodeRed - Waiting for Invitation">
-            <img src="images/img-TcDH2u5rml9esILHZ3jYN.png" alt="Itadakimasu - Yummy Ghetti">
-            <img src="images/img-kM4PYsMosLt2gxvDJkNBx.png" alt="Frozen - Let it F' Go">
-            <img src="images/img-vgt2ZLKe7a3tBaBVxf2tx.png" alt="Glitch Wave - Way to Sober">
+            <!-- Adding lazy loading and enhanced hover effect placeholder -->
+            <img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You" loading="lazy">
+            <img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok" loading="lazy">
+            <img src="images/img-t1bHsXBw5FL9PZ70sXfbp.png" alt="Dress CodeRed - Waiting for Invitation" loading="lazy">
+            <img src="images/img-TcDH2u5rml9esILHZ3jYN.png" alt="Itadakimasu - Yummy Ghetti" loading="lazy">
+            <img src="images/img-kM4PYsMosLt2gxvDJkNBx.png" alt="Frozen - Let it F' Go" loading="lazy">
+            <img src="images/img-vgt2ZLKe7a3tBaBVxf2tx.png" alt="Glitch Wave - Way to Sober" loading="lazy">
 
-            <img src="images/img-3AzlsduNF9u0fYg83aR9p.png" alt="Ramen Date - Cheaper Date">
-            <img src="images/img-B1Y8loqAgvTzV1FRGTpn4.jpeg" alt="at Rooftop - Imagine of the People">
-            <img src="images/img-g1lJlBiAaNf1f5nQtrESg.jpeg" alt="Griddy Scene - Aligned Well">
-            <img src="images/img-BUBHIyu06pc67PJmWmAUX.png" alt="New Post - Delete Soon">
-            <img src="images/img-hS035sE1JiteEBKOCh92e.png" alt="Linger - Possesive">
-            <img src="images/img-mPUszOFQxXY9J1M2e1bPr.png" alt="Outing Class - Everything Better">
-            <!-- Repeat with enhanced alt text -->
+            <img src="images/img-3AzlsduNF9u0fYg83aR9p.png" alt="Ramen Date - Cheaper Date" loading="lazy">
+            <img src="images/img-B1Y8loqAgvTzV1FRGTpn4.jpeg" alt="at Rooftop - Imagine of the People" loading="lazy">
+            <img src="images/img-g1lJlBiAaNf1f5nQtrESg.jpeg" alt="Griddy Scene - Aligned Well" loading="lazy">
+            <img src="images/img-BUBHIyu06pc67PJmWmAUX.png" alt="New Post - Delete Soon" loading="lazy">
+            <img src="images/img-hS035sE1JiteEBKOCh92e.png" alt="Linger - Possessive" loading="lazy">
+            <img src="images/img-mPUszOFQxXY9J1M2e1bPr.png" alt="Outing Class - Everything Better" loading="lazy">
         </div>
     </section>
 
@@ -56,5 +60,44 @@
     <footer role="contentinfo">
         <p>&copy; 2024 misdkal. All rights reserved.</p>
     </footer>
+
+    <!-- Lightbox modal structure (initially hidden) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div id="caption"></div>
+    </div>
+
+    <!-- JavaScript for lightbox and dark mode (optional) -->
+    <script>
+        // Lightbox functionality
+        const galleryImages = document.querySelectorAll('.gallery-grid img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const caption = document.getElementById('caption');
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+                caption.innerHTML = img.alt;
+            });
+        });
+        document.querySelector('.close').addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', function() {
+            const parallax = document.querySelector('.parallax');
+            let scrollPosition = window.pageYOffset;
+            parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        });
+    </script>
 </body>
 </html>
