@@ -177,12 +177,19 @@ nav ul li a:hover {
 
 .gallery-grid img {
     width: 100%;
-    height: 0;
-    padding-bottom: 100%; /* Forces the height to match the width (square) */
+    height: 100%;
     object-fit: cover; /* Ensures images fit into the square without distortion */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle shadow for images */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: absolute; /* Forces the image to cover the container */
+    top: 0;
+    left: 0;
+}
+
+.gallery-grid div {
+    position: relative; /* Container for each image to enforce square */
+    padding-bottom: 100%; /* Forces square shape */
 }
 
 .gallery-grid img:hover {
