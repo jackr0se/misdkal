@@ -166,7 +166,6 @@ nav ul li a:hover {
     color: #FFB300;
 }
 
-/* Gallery Grid - Images as squares */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
@@ -178,18 +177,10 @@ nav ul li a:hover {
 .gallery-grid img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures images fit into the square without distortion */
+    object-fit: cover; /* Ensures images fit into square */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle shadow for images */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: absolute; /* Forces the image to cover the container */
-    top: 0;
-    left: 0;
-}
-
-.gallery-grid div {
-    position: relative; /* Container for each image to enforce square */
-    padding-bottom: 100%; /* Forces square shape */
 }
 
 .gallery-grid img:hover {
@@ -197,7 +188,7 @@ nav ul li a:hover {
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Lightbox - Display full-size image when clicked */
+/* Lightbox - Center the image and allow closing by clicking outside */
 .lightbox {
     display: none; /* Hidden by default */
     position: fixed;
@@ -217,8 +208,6 @@ nav ul li a:hover {
     max-width: 80%;
     max-height: 80%;
     border-radius: 10px; /* Optional: round the corners */
-    width: auto; /* Ensures the full-size image is shown based on its original aspect ratio */
-    height: auto;
 }
 
 #caption {
