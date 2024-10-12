@@ -14,8 +14,7 @@
     <header>
         <nav>
             <h1><a href="#">MISDKAL</a></h1>
-            <button class="hamburger" id="hamburger">&#9776;</button> <!-- Hamburger icon -->
-            <ul id="nav-links">
+            <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -35,19 +34,19 @@
 
     <section id="gallery">
         <h2>Gallery</h2>
-        <div class="gallery-grid"></div>
-            <div><img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You" loading="lazy"></div>
-            <div><img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok" loading="lazy"></div>
-            <div><img src="images/img-t1bHsXBw5FL9PZ70sXfbp.png" alt="Dress CodeRed - Waiting for Invitation" loading="lazy"></div>
-            <div><img src="images/img-TcDH2u5rml9esILHZ3jYN.png" alt="Itadakimasu - Yummy Ghetti" loading="lazy"></div>
-            <div><img src="images/img-kM4PYsMosLt2gxvDJkNBx.png" alt="Frozen - Let it F' Go" loading="lazy"></div>
-            <div><img src="images/img-vgt2ZLKe7a3tBaBVxf2tx.png" alt="Glitch Wave - Way to Sober" loading="lazy"></div>
-            <div><img src="images/img-3AzlsduNF9u0fYg83aR9p.png" alt="Ramen Date - Cheaper Date" loading="lazy"></div>
-            <div><img src="images/img-B1Y8loqAgvTzV1FRGTpn4.jpeg" alt="at Rooftop - Imagine of the People" loading="lazy"></div>
-            <div><img src="images/img-g1lJlBiAaNf1f5nQtrESg.jpeg" alt="Griddy Scene - Aligned Well" loading="lazy"></div>
-            <div><img src="images/img-BUBHIyu06pc67PJmWmAUX.png" alt="New Post - Delete Soon" loading="lazy"></div>
-            <div><img src="images/img-hS035sE1JiteEBKOCh92e.png" alt="Linger - Possessive" loading="lazy"></div>
-            <div><img src="images/img-mPUszOFQxXY9J1M2e1bPr.png" alt="Outing Class - Everything Better" loading="lazy"></div>
+        <div class="gallery-grid">
+            <img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You" loading="lazy">
+            <img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok" loading="lazy">
+            <img src="images/img-t1bHsXBw5FL9PZ70sXfbp.png" alt="Dress CodeRed - Waiting for Invitation" loading="lazy">
+            <img src="images/img-TcDH2u5rml9esILHZ3jYN.png" alt="Itadakimasu - Yummy Ghetti" loading="lazy">
+            <img src="images/img-kM4PYsMosLt2gxvDJkNBx.png" alt="Frozen - Let it F' Go" loading="lazy">
+            <img src="images/img-vgt2ZLKe7a3tBaBVxf2tx.png" alt="Glitch Wave - Way to Sober" loading="lazy">
+            <img src="images/img-3AzlsduNF9u0fYg83aR9p.png" alt="Ramen Date - Cheaper Date" loading="lazy">
+            <img src="images/img-B1Y8loqAgvTzV1FRGTpn4.jpeg" alt="at Rooftop - Imagine of the People" loading="lazy">
+            <img src="images/img-g1lJlBiAaNf1f5nQtrESg.jpeg" alt="Griddy Scene - Aligned Well" loading="lazy">
+            <img src="images/img-BUBHIyu06pc67PJmWmAUX.png" alt="New Post - Delete Soon" loading="lazy">
+            <img src="images/img-hS035sE1JiteEBKOCh92e.png" alt="Linger - Possessive" loading="lazy">
+            <img src="images/img-mPUszOFQxXY9J1M2e1bPr.png" alt="Outing Class - Everything Better" loading="lazy">
         </div>
     </section>
 
@@ -62,7 +61,7 @@
 
     <!-- Lightbox modal structure (initially hidden) -->
     <div id="lightbox" class="lightbox">
-        <!-- Removed the close button -->
+        <span class="close">&times;</span>
         <img class="lightbox-content" id="lightboxImg">
         <div id="caption"></div>
     </div>
@@ -90,6 +89,11 @@
             }
         });
 
+        // Close button functionality
+        document.querySelector('.close').addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
         // Dark mode toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
         darkModeToggle.addEventListener('click', () => {
@@ -101,13 +105,6 @@
             const parallax = document.querySelector('.parallax');
             let scrollPosition = window.pageYOffset;
             parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
-        });
-
-        // Hamburger menu functionality
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
         });
     </script>
 </body>
