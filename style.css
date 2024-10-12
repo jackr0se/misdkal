@@ -51,10 +51,33 @@ nav h1 a {
     color: #FFB300; /* Gold accent color for elegance */
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #FFB300; /* Gold for hamburger icon */
+    cursor: pointer;
+}
+
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+}
+
+/* Hide nav links on small screens */
+#nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #1E1E1E;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 nav ul li a:hover {
@@ -153,6 +176,8 @@ nav ul li a:hover {
 
 .gallery-grid img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fit into square */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle shadow for images */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -183,15 +208,6 @@ nav ul li a:hover {
     max-width: 80%;
     max-height: 80%;
     border-radius: 10px; /* Optional: round the corners */
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
 }
 
 #caption {
@@ -230,4 +246,19 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    nav ul {
+        display: none; /* Hide navigation links by default on small screens */
+    }
+
+    nav ul.active {
+        display: block; /* Display navigation links when active (on click) */
+    }
 }
