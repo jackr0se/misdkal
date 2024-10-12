@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="new perspective">
-    <title>MISDKAL</title>
+    <meta name="description" content="Explore MISDKAL's unique artwork gallery featuring surreal, glitch, and vintage styles. Discover and enjoy an aesthetic visual experience.">
+    <title>MISDKAL | A Visual Journey</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-    <!-- Add FontAwesome for icons if needed -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav>
             <h1><a href="#">MISDKAL</a></h1>
-            <button class="hamburger" id="hamburger">&#9776;</button> <!-- Hamburger icon -->
+            <button class="hamburger" id="hamburger">&#9776;</button>
             <ul id="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <!-- Dark mode toggle button -->
             <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
         </nav>
     </header>
@@ -36,6 +34,7 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-grid">
+            <!-- Gallery images -->
             <img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You" loading="lazy">
             <img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok" loading="lazy">
             <img src="images/img-t1bHsXBw5FL9PZ70sXfbp.png" alt="Dress CodeRed - Waiting for Invitation" loading="lazy">
@@ -43,7 +42,7 @@
             <img src="images/img-kM4PYsMosLt2gxvDJkNBx.png" alt="Frozen - Let it F' Go" loading="lazy">
             <img src="images/img-vgt2ZLKe7a3tBaBVxf2tx.png" alt="Glitch Wave - Way to Sober" loading="lazy">
             <img src="images/img-3AzlsduNF9u0fYg83aR9p.png" alt="Ramen Date - Cheaper Date" loading="lazy">
-            <img src="images/img-B1Y8loqAgvTzV1FRGTpn4.jpeg" alt="at Rooftop - Imagine of the People" loading="lazy">
+            <img src="images/img-B1Y8loqAgvTzV1FRGTpn4.jpeg" alt="At Rooftop - Imagine of the People" loading="lazy">
             <img src="images/img-g1lJlBiAaNf1f5nQtrESg.jpeg" alt="Griddy Scene - Aligned Well" loading="lazy">
             <img src="images/img-BUBHIyu06pc67PJmWmAUX.png" alt="New Post - Delete Soon" loading="lazy">
             <img src="images/img-hS035sE1JiteEBKOCh92e.png" alt="Linger - Possessive" loading="lazy">
@@ -53,23 +52,19 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I need imaginary Friends</p>
+        <p>I need imaginary friends to inspire my creativity. Explore my surreal artwork that brings dreams and emotions to life.</p>
     </section>
 
-    <footer role="contentinfo">
-        <p>&copy; 2024 misdkal. All rights reserved.</p>
+    <footer>
+        <p>&copy; 2024 MISDKAL. All rights reserved.</p>
     </footer>
 
-    <!-- Lightbox modal structure (initially hidden) -->
     <div id="lightbox" class="lightbox">
-        <!-- Removed the close button -->
         <img class="lightbox-content" id="lightboxImg">
         <div id="caption"></div>
     </div>
 
-    <!-- JavaScript for lightbox and dark mode (optional) -->
     <script>
-        // Lightbox functionality
         const galleryImages = document.querySelectorAll('.gallery-grid img');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
@@ -83,27 +78,23 @@
             });
         });
 
-        // Close lightbox by clicking anywhere outside the image
         lightbox.addEventListener('click', (event) => {
             if (event.target !== lightboxImg) {
                 lightbox.style.display = 'none';
             }
         });
 
-        // Dark mode toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
         darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         });
 
-        // Parallax effect
         window.addEventListener('scroll', function() {
             const parallax = document.querySelector('.parallax');
             let scrollPosition = window.pageYOffset;
             parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
         });
 
-        // Hamburger menu functionality
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
         hamburger.addEventListener('click', () => {
