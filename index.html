@@ -31,7 +31,7 @@
         </div>
     </section>
 
-    <section id="gallery">
+    <section id="gallery" class="hidden">
         <h2>Gallery</h2>
         <div class="gallery-grid">
             <!-- Gallery images -->
@@ -49,12 +49,12 @@
             <img src="images/img-mPUszOFQxXY9J1M2e1bPr.png" alt="Outing Class - Everything Better" loading="lazy">
         </div>
         <div class="pagination">
-            <button class="prev">Previous</button>
-            <button class="next">Next</button>
+            <button class="prev"><i class="fas fa-arrow-left"></i></button>
+            <button class="next"><i class="fas fa-arrow-right"></i></button>
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="hidden">
         <h2>About Me</h2>
         <p>I need imaginary friends to inspire my creativity. Explore my surreal artwork that brings dreams and emotions to life.</p>
     </section>
@@ -65,7 +65,7 @@
 
     <div id="lightbox" class="lightbox">
         <img class="lightbox-content" id="lightboxImg">
-        <div id="caption"></div>
+        <div id="caption" class="caption"></div>
     </div>
 
     <script>
@@ -78,7 +78,7 @@
             img.addEventListener('click', () => {
                 lightbox.style.display = 'block';
                 lightboxImg.src = img.src;
-                caption.innerHTML = img.alt;
+                caption.innerHTML = img.alt; // Alt text is displayed below the image
             });
         });
 
@@ -93,17 +93,26 @@
             document.body.classList.toggle('dark-mode');
         });
 
-        window.addEventListener('scroll', function() {
-            const parallax = document.querySelector('.parallax');
-            let scrollPosition = window.pageYOffset;
-            parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
-        });
-
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
+
+        // Handle navigation to different sections
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                document.getElementById(targetId).classList.remove('hidden');
+            });
+        });
+
+        // Initialize to show the intro section
+        document.getElementById('intro').classList.remove('hidden');
     </script>
 </body>
 </html>
