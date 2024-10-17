@@ -22,14 +22,38 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-            <img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You" loading="lazy">
-            <img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok" loading="lazy">
+            <img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You" loading="lazy" class="gallery-preview">
+            <img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok" loading="lazy" class="gallery-preview">
             <!-- More images -->
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 MISDKAL. All rights reserved.</p>
-    </footer>
+    <!-- Lightbox popup -->
+    <div id="lightbox" class="lightbox">
+        <img class="lightbox-content" id="lightboxImg">
+        <div id="caption" class="caption"></div>
+    </div>
+
+    <script>
+        // Lightbox logic
+        const galleryImages = document.querySelectorAll('.gallery-preview');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const caption = document.getElementById('caption');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+                caption.innerHTML = img.alt; // Display alt text as caption
+            });
+        });
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
