@@ -32,11 +32,10 @@
         </div>
     </section>
 
-    <!-- Hidden sections initially -->
-    <section id="gallery" class="hidden">
+    <!-- Gallery Section -->
+    <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-            <!-- Gallery images -->
             <img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You" loading="lazy">
             <img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok" loading="lazy">
             <!-- More images -->
@@ -47,9 +46,17 @@
         </div>
     </section>
 
-    <section id="about" class="hidden">
+    <!-- Dummy About Section -->
+    <section id="about">
         <h2>About Me</h2>
-        <p>I need imaginary friends to inspire my creativity. Explore my surreal artwork that brings dreams and emotions to life.</p>
+        <p>Explore my surreal artwork that brings dreams and emotions to life. Creativity flows from imagination to reality.</p>
+    </section>
+
+    <!-- Dummy Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out for collaborations, inquiries, or just to say hello.</p>
+        <p>Email: contact@misdkal.com</p>
     </section>
 
     <footer>
@@ -62,19 +69,11 @@
     </div>
 
     <script>
-        // Dark Mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-
-        // Gallery and About sections initially hidden
+        // Smooth scroll to gallery on button click
         const exploreGalleryBtn = document.getElementById('exploreGalleryBtn');
         exploreGalleryBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            document.getElementById('gallery').classList.remove('hidden');
-            document.getElementById('about').classList.remove('hidden');
-            document.getElementById('intro').classList.add('hidden');
+            document.querySelector('#gallery').scrollIntoView({ behavior: 'smooth' });
         });
 
         // Slideshow logic for intro section background
@@ -96,6 +95,12 @@
         // Change the background image every 5 seconds
         setInterval(changeBackgroundImage, 5000);
         changeBackgroundImage(); // Set initial background
+
+        // Dark Mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
     </script>
 </body>
 </html>
