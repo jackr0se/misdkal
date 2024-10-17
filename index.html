@@ -15,9 +15,9 @@
             <h1><a href="#">MISDKAL</a></h1>
             <button class="hamburger" id="hamburger">&#9776;</button>
             <ul id="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
         </nav>
@@ -28,54 +28,11 @@
         <div class="intro-text parallax">
             <h2>Escape From Reality</h2>
             <p>While You Can</p>
-            <a href="#gallery" class="btn" id="exploreGalleryBtn">Explore Gallery</a>
+            <a href="gallery.html" class="btn">Explore Gallery</a>
         </div>
     </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You" loading="lazy">
-            <img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok" loading="lazy">
-            <!-- More images -->
-        </div>
-        <div class="pagination">
-            <button class="prev"><i class="fas fa-arrow-left"></i></button>
-            <button class="next"><i class="fas fa-arrow-right"></i></button>
-        </div>
-    </section>
-
-    <!-- Dummy About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Explore my surreal artwork that brings dreams and emotions to life. Creativity flows from imagination to reality.</p>
-    </section>
-
-    <!-- Dummy Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out for collaborations, inquiries, or just to say hello.</p>
-        <p>Email: contact@misdkal.com</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 MISDKAL. All rights reserved.</p>
-    </footer>
-
-    <div id="lightbox" class="lightbox">
-        <img class="lightbox-content" id="lightboxImg">
-        <div id="caption" class="caption"></div>
-    </div>
 
     <script>
-        // Smooth scroll to gallery on button click
-        const exploreGalleryBtn = document.getElementById('exploreGalleryBtn');
-        exploreGalleryBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#gallery').scrollIntoView({ behavior: 'smooth' });
-        });
-
         // Slideshow logic for intro section background
         const images = [
             'images/img-5aM4Es9sQqHLD4BJgK38S.jpeg',
