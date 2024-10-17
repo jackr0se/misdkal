@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore MISDKAL's unique artwork gallery featuring surreal, glitch, and vintage styles. Discover and enjoy an aesthetic visual experience.">
+    <meta name="description" content="Explore MISDKAL's unique artwork gallery featuring surreal, glitch, and vintage styles.">
     <title>MISDKAL | A Visual Journey</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
@@ -33,12 +33,18 @@
     </section>
 
     <script>
+        // Hamburger toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
         // Slideshow logic for intro section background
         const images = [
             'images/img-5aM4Es9sQqHLD4BJgK38S.jpeg',
             'images/img-gqXCyzvmcPBK7zVczc43S.png',
             'images/img-t1bHsXBw5FL9PZ70sXfbp.png'
-            // Add more image paths as needed
         ];
 
         let currentImageIndex = 0;
@@ -49,9 +55,8 @@
             currentImageIndex = (currentImageIndex + 1) % images.length;
         }
 
-        // Change the background image every 5 seconds
         setInterval(changeBackgroundImage, 5000);
-        changeBackgroundImage(); // Set initial background
+        changeBackgroundImage();
 
         // Dark Mode toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
