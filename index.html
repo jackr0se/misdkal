@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore MISDKAL's unique artwork gallery featuring surreal, glitch, and vintage styles.">
+    <meta name="description" content="Explore MISDKAL's unique artwork gallery featuring surreal, glitch, and vintage styles. Discover and enjoy an aesthetic visual experience.">
     <title>MISDKAL | A Visual Journey</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
@@ -15,54 +15,104 @@
             <h1><a href="#">MISDKAL</a></h1>
             <button class="hamburger" id="hamburger">&#9776;</button>
             <ul id="nav-links">
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
         </nav>
     </header>
 
-    <!-- Static landing page section -->
     <section id="intro">
         <div class="intro-text parallax">
             <h2>Escape From Reality</h2>
             <p>While You Can</p>
-            <a href="gallery.html" class="btn">Explore Gallery</a>
+            <a href="#gallery" class="btn">Explore Gallery</a>
         </div>
     </section>
 
+    <section id="gallery" class="hidden">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Gallery images -->
+            <img src="images/img-5aM4Es9sQqHLD4BJgK38S.jpeg" alt="Dragon Stare - Looking at You" loading="lazy">
+            <img src="images/img-gqXCyzvmcPBK7zVczc43S.png" alt="Sky View - Little Glitch Ok" loading="lazy">
+            <img src="images/img-t1bHsXBw5FL9PZ70sXfbp.png" alt="Dress CodeRed - Waiting for Invitation" loading="lazy">
+            <img src="images/img-TcDH2u5rml9esILHZ3jYN.png" alt="Itadakimasu - Yummy Ghetti" loading="lazy">
+            <img src="images/img-kM4PYsMosLt2gxvDJkNBx.png" alt="Frozen - Let it F' Go" loading="lazy">
+            <img src="images/img-vgt2ZLKe7a3tBaBVxf2tx.png" alt="Glitch Wave - Way to Sober" loading="lazy">
+            <img src="images/img-3AzlsduNF9u0fYg83aR9p.png" alt="Ramen Date - Cheaper Date" loading="lazy">
+            <img src="images/img-B1Y8loqAgvTzV1FRGTpn4.jpeg" alt="At Rooftop - Imagine of the People" loading="lazy">
+            <img src="images/img-g1lJlBiAaNf1f5nQtrESg.jpeg" alt="Griddy Scene - Aligned Well" loading="lazy">
+            <img src="images/img-BUBHIyu06pc67PJmWmAUX.png" alt="New Post - Delete Soon" loading="lazy">
+            <img src="images/img-hS035sE1JiteEBKOCh92e.png" alt="Linger - Possessive" loading="lazy">
+            <img src="images/img-mPUszOFQxXY9J1M2e1bPr.png" alt="Outing Class - Everything Better" loading="lazy">
+        </div>
+        <div class="pagination">
+            <button class="prev"><i class="fas fa-arrow-left"></i></button>
+            <button class="next"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <section id="about" class="hidden">
+        <h2>About Me</h2>
+        <p>I need imaginary friends to inspire my creativity. Explore my surreal artwork that brings dreams and emotions to life.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 MISDKAL. All rights reserved.</p>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <img class="lightbox-content" id="lightboxImg">
+        <div id="caption" class="caption"></div>
+    </div>
+
     <script>
-        // Hamburger toggle
+        const galleryImages = document.querySelectorAll('.gallery-grid img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const caption = document.getElementById('caption');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+                caption.innerHTML = img.alt; // Alt text is displayed below the image
+            });
+        });
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Slideshow logic for intro section background
-        const images = [
-            'images/img-5aM4Es9sQqHLD4BJgK38S.jpeg',
-            'images/img-gqXCyzvmcPBK7zVczc43S.png',
-            'images/img-t1bHsXBw5FL9PZ70sXfbp.png'
-        ];
-
-        let currentImageIndex = 0;
-        const introSection = document.getElementById('intro');
-        
-        function changeBackgroundImage() {
-            introSection.style.backgroundImage = `url(${images[currentImageIndex]})`;
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-        }
-
-        setInterval(changeBackgroundImage, 5000);
-        changeBackgroundImage();
-
-        // Dark Mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
+        // Handle navigation to different sections
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                document.getElementById(targetId).classList.remove('hidden');
+            });
         });
+
+        // Initialize to show the intro section
+        document.getElementById('intro').classList.remove('hidden');
     </script>
 </body>
 </html>
