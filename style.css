@@ -19,11 +19,6 @@ body {
     color: #121212;
 }
 
-/* Hidden sections */
-.hidden {
-    display: none;
-}
-
 /* Header and Navigation */
 header {
     background-color: #1E1E1E;
@@ -104,6 +99,14 @@ nav ul {
 #gallery {
     padding: 50px;
     background-color: #1E1E1E;
+}
+
+/* About and Contact Sections */
+#about, #contact {
+    padding: 50px;
+    text-align: center;
+    background-color: #121212;
+    color: #E0E0E0;
 }
 
 /* Media Queries */
