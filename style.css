@@ -7,10 +7,15 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #121212;
-    color: #E0E0E0;
+    background-color: #121212; /* Dark background */
+    color: #E0E0E0; /* Light text color */
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+}
+
+a {
+    text-decoration: none;
+    color: #E0E0E0; /* Light link color */
 }
 
 /* Dark Mode */
@@ -19,10 +24,15 @@ body {
     color: #121212;
 }
 
+.dark-mode a {
+    color: #121212;
+}
+
 /* Header and Navigation */
 header {
-    background-color: #1E1E1E;
+    background-color: #1E1E1E; /* Dark header background */
     padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -34,68 +44,160 @@ nav {
     align-items: center;
 }
 
+nav h1 a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #FFB300; /* Gold accent color for elegance */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #FFB300; /* Gold for hamburger icon */
+    cursor: pointer;
+}
+
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-/* Hamburger menu */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #FFB300;
-    cursor: pointer;
+/* Hide nav links on small screens */
+#nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #1E1E1E;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Show hamburger on smaller screens */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav ul.active {
-        display: flex;
-        flex-direction: column;
-    }
+nav ul li a:hover {
+    color: #FFB300; /* Gold hover effect */
 }
 
-/* Dark Mode Toggle */
+/* Dark Mode Toggle Button */
 .dark-mode-toggle {
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #FFB300;
+    color: #FFB300; /* Gold color */
 }
 
-/* Gallery Preview */
-.gallery-preview {
-    width: 100px;
-    height: auto;
-    transition: transform 0.3s ease;
+/* Intro Section */
+#intro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/your-art.jpg') no-repeat center center/cover;
+    color: #fff; /* White text for contrast */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 
-.gallery-preview:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
+#intro::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    z-index: -1;
+}
+
+.intro-text h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+
+.intro-text p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.btn {
+    padding: 10px 30px;
+    background-color: #FFB300; /* Gold button */
+    color: #121212; /* Dark text for button */
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform for hover effect */
+}
+
+.btn:hover {
+    background-color: #FFD600; /* Lighter gold on hover */
+    transform: translateY(-3px);
+}
+
+/* Parallax Effect */
+.parallax {
+    position: relative;
+}
+
+.parallax img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Gallery Section - Fixed 3 columns layout */
+#gallery {
+    padding: 50px;
+    background-color: #1E1E1E; /* Dark gallery background */
+}
+
+#gallery h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #FFB300;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
+    gap: 20px;
+    max-width: 1200px; /* Optional: Define max-width to control layout width */
+    margin: 0 auto; /* Center the grid container */
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fit into square */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle shadow for images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Lightbox - Center the image and allow closing by clicking outside */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darken the background */
 }
 
 .lightbox-content {
@@ -105,24 +207,91 @@ nav ul {
     transform: translate(-50%, -50%);
     max-width: 80%;
     max-height: 80%;
+    border-radius: 10px; /* Optional: round the corners */
 }
 
-.caption {
+#caption {
     text-align: center;
     color: #fff;
     font-size: 1.2rem;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* About Section */
+#about {
+    padding: 50px;
+    background-color: #121212; /* Dark about section background */
 }
 
-input, textarea, button {
-    padding: 10px;
-    border: 1px solid #ccc;
+#about h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #FFB300;
+}
+
+#about p {
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+    color: #E0E0E0;
+}
+
+/* Footer */
+footer {
+    background-color: #1E1E1E;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Pagination Styles */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    background-color: #FFB300;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #FFD600; /* Lighter gold on hover */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    nav ul {
+        display: none; /* Hide navigation links by default on small screens */
+    }
+
+    nav ul.active {
+        display: block; /* Display navigation links when active (on click) */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr); /* Adjust to 1 column for small screens */
+    }
+
+    .intro-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
 }
