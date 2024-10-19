@@ -73,7 +73,8 @@ nav a {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 10px; /* Reduced gap for more compact layout */
+    padding: 0 20px; /* Adding padding to the grid */
 }
 
 .gallery-item img {
