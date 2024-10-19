@@ -77,9 +77,9 @@ nav a {
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    max-height: 150px; /* Smaller thumbnails */
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Limit thumbnail height */
     cursor: pointer;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
