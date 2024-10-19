@@ -1,14 +1,20 @@
 
-/* General body styling with a minimalist aesthetic */
+/* General body styling with a full-page background */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    height: 100%;
+    min-height: 100vh;
 }
 
 /* Navigation styling */
+nav {
+    margin: 20px;
+}
+
 nav a {
     margin: 0 10px;
     text-decoration: none;
@@ -23,7 +29,7 @@ nav a {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: url('placeholder_bg.jpg') no-repeat center center/cover;
+    background: rgba(255, 255, 255, 0.8);
     color: #444;
 }
 
@@ -51,10 +57,9 @@ nav a {
 /* Slideshow styling */
 .slideshow img {
     display: block;
-    max-width: 90%;
-    margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Gallery page styling */
@@ -62,6 +67,7 @@ nav a {
     padding: 40px;
     text-align: center;
     background-color: #f9f9f9;
+    min-height: 100vh;
 }
 
 .gallery-grid {
@@ -73,9 +79,35 @@ nav a {
 .gallery-item img {
     width: 100%;
     height: auto;
+    max-height: 150px; /* Smaller thumbnails */
     cursor: pointer;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pop-up styling for gallery images */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup img {
+    max-width: 80%;
+    max-height: 80%;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    color: #fff;
+    font-size: 1.2em;
 }
 
 /* Pagination styling */
@@ -98,6 +130,7 @@ nav a {
     padding: 40px;
     background-color: #fff3e0; /* Light peach */
     text-align: center;
+    min-height: 100vh;
 }
 
 .about-page h2 {
@@ -115,6 +148,7 @@ nav a {
     padding: 40px;
     background-color: #e1f5fe; /* Light cyan */
     text-align: center;
+    min-height: 100vh;
 }
 
 .contact-page form {
@@ -129,6 +163,7 @@ nav a {
     border-radius: 8px;
     border: 1px solid #ccc;
     width: 80%;
+    max-width: 400px; /* Proper form width */
 }
 
 .contact-page input[type="submit"] {
@@ -136,6 +171,7 @@ nav a {
     color: #fff;
     cursor: pointer;
     border: none;
+    max-width: 200px;
 }
 
 .contact-page input[type="submit"]:hover {
@@ -146,6 +182,7 @@ nav a {
 .shop-page {
     padding: 40px;
     text-align: center;
+    min-height: 100vh;
 }
 
 .product img {
