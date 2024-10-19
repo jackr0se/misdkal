@@ -7,12 +7,16 @@
     <title>Gallery - AI Artwork Showcase</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Ensure proper thumbnail size and aspect ratio */
         .gallery-item img {
             max-width: 100%;
-            max-height: 150px; /* Smaller size for thumbnails */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 200px; /* Limit height without stretching */
             cursor: pointer;
+            border-radius: 8px;
         }
 
+        /* Pop-up styling for full-size image display */
         .popup {
             display: none;
             position: fixed;
@@ -57,8 +61,6 @@
             <div class="gallery-item"><img src="images/img-BUBHIyu06pc67PJmWmAUX.png" alt="New Post - Delete Soon" onclick="openPopup(this)"></div>
             <div class="gallery-item"><img src="images/img-hS035sE1JiteEBKOCh92e.png" alt="Linger - Possessive" onclick="openPopup(this)"></div>
             <div class="gallery-item"><img src="images/img-mPUszOFQxXY9J1M2e1bPr.png" alt="Outing Class - Everything Better" onclick="openPopup(this)"></div>
-
-
         </div>
         <div class="pagination">
             <button>Prev</button>
@@ -69,10 +71,9 @@
         </nav>
 
         <!-- Pop-up for full-size image -->
-        <div class="popup" id="popup">
+        <div class="popup" id="popup" onclick="closePopup()">
             <img id="popupImage" src="" alt="">
             <p id="popupAlt"></p>
-            <button onclick="closePopup()">Close</button>
         </div>
 
         <script>
