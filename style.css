@@ -1,297 +1,160 @@
-/* Global Styles */
-* {
+
+/* General body styling with a minimalist aesthetic */
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #121212; /* Dark background */
-    color: #E0E0E0; /* Light text color */
-    line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
-}
-
-a {
+/* Navigation styling */
+nav a {
+    margin: 0 10px;
     text-decoration: none;
-    color: #E0E0E0; /* Light link color */
+    color: #333;
+    font-weight: bold;
 }
 
-/* Dark Mode */
-.dark-mode {
-    background-color: #E0E0E0;
-    color: #121212;
-}
-
-.dark-mode a {
-    color: #121212;
-}
-
-/* Header and Navigation */
-header {
-    background-color: #1E1E1E; /* Dark header background */
-    padding: 20px 40px;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav h1 a {
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    color: #FFB300; /* Gold accent color for elegance */
-}
-
-/* Hamburger Menu */
-.hamburger {
-    display: none; /* Hidden by default on larger screens */
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #FFB300; /* Gold for hamburger icon */
-    cursor: pointer;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-/* Hide nav links on small screens */
-#nav-links.active {
+/* Homepage styling */
+.homepage {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: #1E1E1E;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-nav ul li a:hover {
-    color: #FFB300; /* Gold hover effect */
-}
-
-/* Dark Mode Toggle Button */
-.dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #FFB300; /* Gold color */
-}
-
-/* Intro Section */
-#intro {
-    height: 100vh;
-    display: flex;
     align-items: center;
     justify-content: center;
-    background: url('images/your-art.jpg') no-repeat center center/cover;
-    color: #fff; /* White text for contrast */
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+    height: 100vh;
+    background: url('placeholder_bg.jpg') no-repeat center center/cover;
+    color: #444;
 }
 
-#intro::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
-    z-index: -1;
-}
-
-.intro-text h2 {
-    font-size: 3rem;
-    font-weight: 300;
-    letter-spacing: 1.5px;
-}
-
-.intro-text p {
-    margin: 20px 0;
-    font-size: 1.2rem;
-}
-
-.btn {
-    padding: 10px 30px;
-    background-color: #FFB300; /* Gold button */
-    color: #121212; /* Dark text for button */
-    border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform for hover effect */
-}
-
-.btn:hover {
-    background-color: #FFD600; /* Lighter gold on hover */
-    transform: translateY(-3px);
-}
-
-/* Parallax Effect */
-.parallax {
-    position: relative;
-}
-
-.parallax img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Gallery Section - Fixed 3 columns layout */
-#gallery {
-    padding: 50px;
-    background-color: #1E1E1E; /* Dark gallery background */
-}
-
-#gallery h2 {
-    text-align: center;
+.intro h1 {
+    font-size: 2.5em;
     margin-bottom: 20px;
-    font-size: 2rem;
-    color: #FFB300;
+    color: #333;
+}
+
+.intro button {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    background-color: #ffcc80; /* Light orange */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.intro button:hover {
+    background-color: #ffa726; /* Darker orange */
+}
+
+/* Slideshow styling */
+.slideshow img {
+    display: block;
+    max-width: 90%;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery page styling */
+.gallery-page {
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 1200px; /* Optional: Define max-width to control layout width */
-    margin: 0 auto; /* Center the grid container */
 }
 
-.gallery-grid img {
+.gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures images fit into square */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle shadow for images */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
-}
-
-/* Lightbox - Center the image and allow closing by clicking outside */
-.lightbox {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly darken the background */
-}
-
-.lightbox-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 10px; /* Optional: round the corners */
-}
-
-#caption {
-    text-align: center;
-    color: #fff;
-    font-size: 1.2rem;
-    margin-top: 20px;
-}
-
-/* About Section */
-#about {
-    padding: 50px;
-    background-color: #121212; /* Dark about section background */
-}
-
-#about h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #FFB300;
-}
-
-#about p {
-    text-align: center;
-    max-width: 600px;
-    margin: 20px auto;
-    color: #E0E0E0;
-}
-
-/* Footer */
-footer {
-    background-color: #1E1E1E;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Pagination Styles */
-.pagination {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.pagination button {
-    background-color: #FFB300;
-    color: #121212;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    height: auto;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pagination styling */
+.pagination button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #64b5f6; /* Light blue */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .pagination button:hover {
-    background-color: #FFD600; /* Lighter gold on hover */
+    background-color: #42a5f5; /* Darker blue */
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block; /* Show hamburger on small screens */
-    }
+/* About page styling */
+.about-page {
+    padding: 40px;
+    background-color: #fff3e0; /* Light peach */
+    text-align: center;
+}
 
-    nav ul {
-        display: none; /* Hide navigation links by default on small screens */
-    }
+.about-page h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
 
-    nav ul.active {
-        display: block; /* Display navigation links when active (on click) */
-    }
+.about-page p {
+    font-size: 1.2em;
+    color: #444;
+}
 
-    .gallery-grid {
-        grid-template-columns: repeat(1, 1fr); /* Adjust to 1 column for small screens */
-    }
+/* Contact page styling */
+.contact-page {
+    padding: 40px;
+    background-color: #e1f5fe; /* Light cyan */
+    text-align: center;
+}
 
-    .intro-text h2 {
-        font-size: 2.5rem;
-    }
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .btn {
-        font-size: 1rem;
-        padding: 8px 20px;
-    }
+.contact-page input {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+.contact-page input[type="submit"] {
+    background-color: #4db6ac; /* Soft teal */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-page input[type="submit"]:hover {
+    background-color: #26a69a; /* Darker teal */
+}
+
+/* Shop page styling */
+.shop-page {
+    padding: 40px;
+    text-align: center;
+}
+
+.product img {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product p {
+    font-size: 1.1em;
+    margin-top: 10px;
 }
