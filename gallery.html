@@ -69,8 +69,8 @@
        
         </div>
         <div class="pagination">
-            <button>Prev</button>
-            <button>Next</button>
+            <button id="prevButton">Prev</button>
+            <button id="nextButton">Next</button>
         </div>
         <nav>
             <a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a>
@@ -95,6 +95,38 @@
             function closePopup() {
                 document.getElementById('popup').style.display = 'none';
             }
+
+            // Pagination logic here
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            let currentPage = 0;
+            const itemsPerPage = 12; // 3x4 grid
+
+            function showPage(page) {
+                galleryItems.forEach((item, index) => {
+                    if (index >= page * itemsPerPage && index < (page + 1) * itemsPerPage) {
+                        item.style.display = 'block'; // Show item
+                    } else {
+                        item.style.display = 'none'; // Hide item
+                    }
+                });
+            }
+
+            document.getElementById('prevButton').onclick = function () {
+                if (currentPage > 0) {
+                    currentPage--;
+                    showPage(currentPage);
+                }
+            };
+
+            document.getElementById('nextButton').onclick = function () {
+                if ((currentPage + 1) * itemsPerPage < galleryItems.length) {
+                    currentPage++;
+                    showPage(currentPage);
+                }
+            };
+
+            // Initialize the first page
+            showPage(0);
         </script>
     </div>
 </body>
