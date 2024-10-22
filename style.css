@@ -1,80 +1,205 @@
+
 /* General body styling with a full-page background */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
-    color: #2c2c2c; 
+    color: #333;
     height: 100%;
     min-height: 100vh;
 }
 
 /* Navigation styling */
+nav {
+    margin: 20px;
+}
+
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #1e3a8a; 
+    color: #333;
     font-weight: bold;
 }
 
-nav a:hover {
-    color: #ff6f61; 
+/* Homepage styling */
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+    color: #444;
 }
 
-/* Page styling for consistent backgrounds */
-.homepage, .gallery-page, .about-page, .contact-page, .shop-page {
-    background-color: #f0f0f5; /* Neutral, soft background for all pages */
-    color: #2c2c2c;
-    min-height: 100vh;
-    padding: 40px;
-}
-
-/* Headings across pages */
-h1, h2, h3 {
-    color: #1e3a8a; 
+.intro h1 {
+    font-size: 2.5em;
     margin-bottom: 20px;
+    color: #333;
 }
 
-/* Button styling */
-button, .intro button, .pagination button, .contact-page input[type="submit"] {
-    background-color: #ff6f61; 
-    color: #fff;
+.intro button {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    background-color: #ffcc80; /* Light orange */
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    padding: 12px 24px;
+    color: #fff;
+    margin-top: 10px;
 }
 
-button:hover, .intro button:hover, .pagination button:hover, .contact-page input[type="submit"]:hover {
-    background-color: #ff7043; 
+.intro button:hover {
+    background-color: #ffa726; /* Darker orange */
 }
 
-/* Gallery image styling */
+/* Slideshow styling */
+.slideshow img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gallery page styling */
+.gallery-page {
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
+    gap: 20px;
+    max-width: 1200px; /* Optional: Define max-width to control layout width */
+    margin: 0 auto; /* Center the grid container */
+}
+
 .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fit into square */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle shadow for images */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-grid img:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Pop-up styling for gallery images */
 .popup {
-    background: rgba(0, 0, 0, 0.9); 
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack image and text vertically */
+    z-index: 10;
 }
 
-/* Input fields for the contact page */
+.popup img {
+    max-width: 80%;
+    max-height: 80%;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+/* Pagination styling */
+.pagination button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #64b5f6; /* Light blue */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #42a5f5; /* Darker blue */
+}
+
+/* About page styling */
+.about-page {
+    padding: 40px;
+    background-color: #fff3e0; /* Light peach */
+    text-align: center;
+    min-height: 100vh;
+}
+
+.about-page h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-page p {
+    font-size: 1.2em;
+    color: #444;
+}
+
+/* Contact page styling */
+.contact-page {
+    padding: 40px;
+    background-color: #e1f5fe; /* Light cyan */
+    text-align: center;
+    min-height: 100vh;
+}
+
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .contact-page input {
-    border: 1px solid #bbb; 
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 80%;
+    max-width: 400px; /* Proper form width */
 }
 
 .contact-page input[type="submit"] {
-    background-color: #ff6f61;
+    background-color: #4db6ac; /* Soft teal */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    max-width: 200px;
 }
 
 .contact-page input[type="submit"]:hover {
-    background-color: #ff7043; 
+    background-color: #26a69a; /* Darker teal */
+}
+
+/* Shop page styling */
+.shop-page {
+    padding: 40px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.product img {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product p {
+    font-size: 1.1em;
+    margin-top: 10px;
 }
