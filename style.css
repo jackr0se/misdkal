@@ -1,4 +1,3 @@
-
 /* General body styling with a full-page background */
 body {
     font-family: 'Arial', sans-serif;
@@ -72,9 +71,10 @@ nav a {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px; /* Reduced gap for more compact layout */
-    padding: 0 20px; /* Adding padding to the grid */
+    grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
+    gap: 20px;
+    max-width: 1200px; /* Optional: Define max-width to control layout width */
+    margin: 0 auto; /* Center the grid container */
 }
 
 .gallery-item img {
@@ -115,7 +115,6 @@ nav a {
 .popup p {
     color: #fff;
     font-size: 1.2em;
-    margin: 0;
 }
 
 /* Pagination styling */
