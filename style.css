@@ -3,8 +3,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f4f4f9; /* Neutral, light background */
+    color: #2c2c2c; /* Dark gray text for better readability */
     height: 100%;
     min-height: 100vh;
 }
@@ -17,7 +17,7 @@ nav {
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #333;
+    color: #1e3a8a; /* Deep blue for elegance */
     font-weight: bold;
 }
 
@@ -28,20 +28,20 @@ nav a {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.8);
-    color: #444;
+    background: rgba(240, 240, 245, 0.9); /* Softer neutral background */
+    color: #2c2c2c;
 }
 
 .intro h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #333;
+    color: #1e3a8a; /* Consistent deep blue for heading */
 }
 
 .intro button {
     padding: 12px 24px;
     font-size: 1.2em;
-    background-color: #ffcc80; /* Light orange */
+    background-color: #ff6f61; /* Fun coral color */
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -50,7 +50,7 @@ nav a {
 }
 
 .intro button:hover {
-    background-color: #ffa726; /* Darker orange */
+    background-color: #ff7043; /* Slightly darker coral on hover */
 }
 
 /* Slideshow styling */
@@ -65,7 +65,7 @@ nav a {
 .gallery-page {
     padding: 40px;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #f0f0f5; /* Soft light gray background */
     min-height: 100vh;
 }
 
@@ -82,13 +82,13 @@ nav a {
     height: 100%;
     object-fit: cover; /* Ensures images fit into square */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Subtle shadow for images */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle, elegant shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-grid img:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Pop-up styling for gallery images */
@@ -121,7 +121,7 @@ nav a {
 .pagination button {
     padding: 10px 20px;
     margin: 5px;
-    background-color: #64b5f6; /* Light blue */
+    background-color: #1e88e5; /* Light blue for elegance */
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -129,13 +129,13 @@ nav a {
 }
 
 .pagination button:hover {
-    background-color: #42a5f5; /* Darker blue */
+    background-color: #1565c0; /* Darker blue on hover */
 }
 
 /* About page styling */
 .about-page {
     padding: 40px;
-    background-color: #fff3e0; /* Light peach */
+    background-color: #f8e8d2; /* Light peach for warmth */
     text-align: center;
     min-height: 100vh;
 }
@@ -143,17 +143,18 @@ nav a {
 .about-page h2 {
     font-size: 2em;
     margin-bottom: 20px;
+    color: #1e3a8a; /* Consistent heading color */
 }
 
 .about-page p {
     font-size: 1.2em;
-    color: #444;
+    color: #2c2c2c;
 }
 
 /* Contact page styling */
 .contact-page {
     padding: 40px;
-    background-color: #e1f5fe; /* Light cyan */
+    background-color: #d0f0ff; /* Soft light blue for calmness */
     text-align: center;
     min-height: 100vh;
 }
@@ -168,13 +169,13 @@ nav a {
     margin: 10px 0;
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #bbb; /* Softer border */
     width: 80%;
     max-width: 400px; /* Proper form width */
 }
 
 .contact-page input[type="submit"] {
-    background-color: #4db6ac; /* Soft teal */
+    background-color: #ff6f61; /* Fun coral color */
     color: #fff;
     cursor: pointer;
     border: none;
@@ -182,7 +183,7 @@ nav a {
 }
 
 .contact-page input[type="submit"]:hover {
-    background-color: #26a69a; /* Darker teal */
+    background-color: #ff7043; /* Slightly darker coral on hover */
 }
 
 /* Shop page styling */
@@ -195,7 +196,7 @@ nav a {
 .product img {
     width: 200px;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Consistent, subtle shadow */
 }
 
 .product p {
