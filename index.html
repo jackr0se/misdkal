@@ -64,13 +64,18 @@
             height: 100%;
             object-fit: cover;
             opacity: 0;
-            animation: slideAnimation 15s infinite;
+            animation: slideAnimation 20s infinite;
         }
 
         @keyframes slideAnimation {
             0% { opacity: 1; }
-            33% { opacity: 0; }
-            66% { opacity: 0; }
+            20% { opacity: 1; }
+            25% { opacity: 0; }
+            45% { opacity: 0; }
+            50% { opacity: 1; }
+            70% { opacity: 1; }
+            75% { opacity: 0; }
+            95% { opacity: 0; }
             100% { opacity: 1; }
         }
 
