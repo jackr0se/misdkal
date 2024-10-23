@@ -149,6 +149,30 @@ nav a {
 .about-page p {
     font-size: 1.2em;
     color: #e0e0e0;
+    margin: 15px 0;
+}
+
+/* Style for the profile image */
+.profile-image img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px; /* Adds rounded corners */
+}
+
+/* Responsive font size for smaller screens */
+@media (max-width: 768px) {
+    .about-page p {
+        font-size: 16px;
+    }
+}
+
+/* Container for centering and responsive padding */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
 }
 
 /* Contact page styling */
