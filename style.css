@@ -152,12 +152,19 @@ nav a {
     margin: 15px 0;
 }
 
-/* Style for the profile image */
+/* Profile image styling with 1:1 aspect ratio */
+.profile-image {
+    width: 150px; /* Fixed size for profile look */
+    height: 150px; /* Fixed size for profile look */
+    margin: 20px auto;
+    overflow: hidden; /* Ensures image doesn't overflow */
+    border-radius: 50%; /* Makes it circular */
+}
 .profile-image img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px 0;
-    border-radius: 8px; /* Adds rounded corners */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintains 1:1 aspect ratio */
+    border-radius: 50%;
 }
 
 /* Responsive font size for smaller screens */
@@ -173,6 +180,14 @@ nav a {
     margin: 0 auto;
     padding: 0 15px;
     text-align: center;
+}
+
+/* Adjust margins and max width for about text */
+.about-text {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: justify; /* Aligns text evenly for a cleaner look */
 }
 
 /* Contact page styling */
